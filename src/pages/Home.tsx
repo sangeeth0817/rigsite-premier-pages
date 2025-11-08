@@ -36,33 +36,33 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center z-0"
+          className="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-700 hover:scale-105"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
         </div>
         
         <div className="container mx-auto px-4 z-10 text-center text-primary-foreground">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up opacity-0">
             Engineering Excellence
             <br />
-            <span className="text-accent">In Every Operation</span>
+            <span className="text-accent bg-clip-text animate-float">In Every Operation</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-primary-foreground/90">
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-primary-foreground/90 animate-fade-in-up opacity-0 stagger-1">
             Leading provider of comprehensive oil and rig solutions with unmatched expertise and reliability
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up opacity-0 stagger-2">
             <Button 
               size="lg" 
-              className="bg-gradient-accent hover:opacity-90 text-primary font-semibold text-lg px-8 py-6"
+              className="bg-gradient-accent hover:opacity-90 hover:scale-105 transition-all duration-300 text-primary font-semibold text-lg px-8 py-6 shadow-lg hover:shadow-2xl hover-glow"
             >
-              Get Started <ArrowRight className="ml-2" />
+              Get Started <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
             <Link to="/services">
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-6"
+                className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-6 transition-all duration-300 hover:scale-105"
               >
                 Our Services
               </Button>
@@ -76,9 +76,9 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-accent mb-2">{stat.number}</div>
-                <div className="text-muted-foreground font-medium">{stat.label}</div>
+              <div key={index} className="text-center group cursor-default">
+                <div className="text-4xl md:text-5xl font-bold text-accent mb-2 transition-all duration-300 group-hover:scale-110 group-hover:text-accent/80">{stat.number}</div>
+                <div className="text-muted-foreground font-medium transition-colors duration-300 group-hover:text-foreground">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -97,24 +97,25 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="border-none shadow-card hover:shadow-premium transition-all duration-300 hover:-translate-y-1">
+              <Card key={index} className="border-none shadow-card hover:shadow-premium transition-all duration-500 hover:-translate-y-2 group cursor-pointer overflow-hidden bg-card">
                 <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-accent rounded-lg flex items-center justify-center mb-4">
-                    <service.icon className="w-8 h-8 text-primary" />
+                  <div className="w-16 h-16 bg-gradient-accent rounded-lg flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                    <service.icon className="w-8 h-8 text-primary transition-transform duration-500 group-hover:scale-110" />
                   </div>
-                  <CardTitle className="text-2xl">{service.title}</CardTitle>
+                  <CardTitle className="text-2xl transition-colors duration-300 group-hover:text-accent">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base">{service.description}</CardDescription>
+                  <CardDescription className="text-base transition-colors duration-300 group-hover:text-foreground">{service.description}</CardDescription>
                 </CardContent>
+                <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </Card>
             ))}
           </div>
 
           <div className="text-center mt-12">
             <Link to="/services">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                View All Services <ArrowRight className="ml-2" />
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-xl group">
+                View All Services <ArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-2" />
               </Button>
             </Link>
           </div>
@@ -153,11 +154,12 @@ const Home = () => {
                 </Button>
               </Link>
             </div>
-            <div className="relative">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-accent opacity-20 rounded-lg blur-xl group-hover:opacity-30 transition-opacity duration-500" />
               <img 
                 src={drillingImage} 
                 alt="Drilling Equipment" 
-                className="rounded-lg shadow-premium"
+                className="rounded-lg shadow-premium relative z-10 transition-transform duration-700 group-hover:scale-105"
               />
             </div>
           </div>
@@ -172,8 +174,8 @@ const Home = () => {
             Contact us today for a consultation and discover how we can support your operations
           </p>
           <Link to="/contact">
-            <Button size="lg" className="bg-gradient-accent hover:opacity-90 text-primary font-semibold text-lg px-8 py-6">
-              Get in Touch <ArrowRight className="ml-2" />
+            <Button size="lg" className="bg-gradient-accent hover:opacity-90 text-primary font-semibold text-lg px-8 py-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover-glow group">
+              Get in Touch <ArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-2" />
             </Button>
           </Link>
         </div>

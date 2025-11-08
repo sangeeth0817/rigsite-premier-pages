@@ -18,15 +18,15 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
+    <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-md border-b border-border z-50 transition-all duration-300 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center">
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-md">
               <span className="text-2xl font-bold text-primary">OR</span>
             </div>
-            <span className="text-xl font-bold text-primary hidden sm:block">OilRig Solutions</span>
+            <span className="text-xl font-bold text-primary hidden sm:block transition-colors duration-300 group-hover:text-accent">OilRig Solutions</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -35,16 +35,16 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-4 py-2 rounded-md transition-colors ${
+                className={`px-4 py-2 rounded-md transition-all duration-300 relative ${
                   isActive(link.path)
-                    ? "text-accent font-semibold"
-                    : "text-foreground hover:text-accent hover:bg-secondary"
+                    ? "text-accent font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-accent"
+                    : "text-foreground hover:text-accent hover:bg-secondary/50 hover:scale-105"
                 }`}
               >
                 {link.name}
               </Link>
             ))}
-            <Button className="ml-4 bg-gradient-accent hover:opacity-90 text-primary font-semibold">
+            <Button className="ml-4 bg-gradient-accent hover:opacity-90 text-primary font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
               Get Quote
             </Button>
           </div>
