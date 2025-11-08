@@ -56,7 +56,6 @@ export default {
       boxShadow: {
         'premium': 'var(--shadow-premium)',
         'card': 'var(--shadow-card)',
-        'glow': 'var(--shadow-glow)',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -133,68 +132,19 @@ export default {
             transform: "translateY(0px)",
           },
           "50%": {
-            transform: "translateY(-20px)",
-          },
-        },
-        "bounce-in": {
-          "0%": {
-            opacity: "0",
-            transform: "scale(0.3)",
-          },
-          "50%": {
-            transform: "scale(1.05)",
-          },
-          "70%": {
-            transform: "scale(0.9)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "scale(1)",
-          },
-        },
-        "rotate-in": {
-          "0%": {
-            opacity: "0",
-            transform: "rotate(-180deg) scale(0.5)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "rotate(0deg) scale(1)",
-          },
-        },
-        "pulse-glow": {
-          "0%, 100%": {
-            boxShadow: "0 0 20px hsl(var(--accent) / 0.3)",
-          },
-          "50%": {
-            boxShadow: "0 0 40px hsl(var(--accent) / 0.6)",
-          },
-        },
-        "gradient-shift": {
-          "0%": {
-            backgroundPosition: "0% 50%",
-          },
-          "50%": {
-            backgroundPosition: "100% 50%",
-          },
-          "100%": {
-            backgroundPosition: "0% 50%",
+            transform: "translateY(-10px)",
           },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in-up": "fade-in-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "fade-in": "fade-in 1s ease-out forwards",
-        "scale-in": "scale-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "slide-in-left": "slide-in-left 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "slide-in-right": "slide-in-right 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "float": "float 4s ease-in-out infinite",
-        "bounce-in": "bounce-in 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards",
-        "rotate-in": "rotate-in 1s ease-out forwards",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
-        "gradient-shift": "gradient-shift 3s ease infinite",
+        "fade-in-up": "fade-in-up 0.8s ease-out forwards",
+        "fade-in": "fade-in 0.6s ease-out forwards",
+        "scale-in": "scale-in 0.5s ease-out forwards",
+        "slide-in-left": "slide-in-left 0.8s ease-out forwards",
+        "slide-in-right": "slide-in-right 0.8s ease-out forwards",
+        "float": "float 3s ease-in-out infinite",
       },
     },
   },
