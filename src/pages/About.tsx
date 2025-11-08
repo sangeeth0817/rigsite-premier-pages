@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Award, Target, Users, TrendingUp } from "lucide-react";
-import engineersImage from "@/assets/engineers-team.jpg";
+import engineersImage from "@/assets/engineers-team.webp";
 
 const About = () => {
   const values = [

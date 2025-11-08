@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle, Shield, Users, Wrench } from "lucide-react";
-import heroImage from "@/assets/hero-rig.jpg";
-import drillingImage from "@/assets/drilling-equipment.jpg";
+import heroImage from "@/assets/hero-rig.webp";
+import drillingImage from "@/assets/drilling-equipment.webp";
 
 const Home = () => {
   const services = [
